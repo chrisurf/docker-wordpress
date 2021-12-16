@@ -1,0 +1,16 @@
+version: '3'
+services:
+  template:
+    image: wordpress
+    tty: true
+    ports:
+      - "80:80"
+    environment:
+      - MYSQL_HOST=localhost
+      - MYSQL_PORT=3306
+      - MYSQL_USER=wpuser
+      - MYSQL_PASSWORD=dbpassword
+      - MYSQL_DATABASE=wordpress
+    volumes:
+      - ./data/html:/var/www/html/
+      - ./data:/mnt/
